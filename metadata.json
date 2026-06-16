@@ -1,0 +1,6 @@
+{
+  "name": "SalonMate",
+  "description": "A luxury, gold-accented salon booking application designed for both customers and barbers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
