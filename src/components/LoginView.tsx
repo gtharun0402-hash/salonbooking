@@ -33,10 +33,17 @@ export default function LoginView({ role, onBack, onLoginSuccess }: LoginViewPro
       onLoginSuccess(email, name);
     } else {
       const { error: authError } = await supabase.auth.signInWithPassword({ email, password });
-      console.log('Auth result:', authError);
       if (authError) { setError('Invalid email or password!'); setLoading(false); return; }
-      const parts = email.split('@')[0];
-      const savedName = parts.charAt(0).toUpperCase() + parts.slice(1);
+      
+      // Supabase la saved name edukanum
+      const { data: userData } = await supabase
+        .from('users')
+        .select('name')
+        .eq('email', email)
+        .single();
+
+      const defaultName = email.split('@')[0];
+      const savedName = userData?.name || defaultName;
       onLoginSuccess(email, savedName);
     }
 
