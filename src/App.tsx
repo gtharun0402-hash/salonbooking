@@ -17,7 +17,7 @@ import BarberBookingsView from './components/BarberBookingsView';
 import BarberProfileView from './components/BarberProfileView';
 import BottomNav from './components/BottomNav';
 
-const GENERATED_SALON_IMAGE = '/src/assets/images/salon_interior_1781506699402.jpg';
+const GENERATED_SALON_IMAGE = 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=1200';
 
 const SAMPLE_SALONS: Salon[] = [
   {
